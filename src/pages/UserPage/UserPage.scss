@@ -21,8 +21,26 @@
 }
 
 .user-description {
-  margin-left: 108px;
-  max-width: 630px;
+  margin: 108px 49px 0 32px;
+  display: flex;
+
+  .user-contacts {
+    margin-left: 130px;
+    
+    &>div>svg{
+      margin-right: 8px;
+    }
+
+    &>div+div {
+      margin-top: 24px;
+    }
+  }
+
+  .user-description-text {
+    max-width: 630px;
+    line-height: 21.79px;
+    color: #151317;
+  }
 }
 
 @media (max-width: 800px) {
@@ -47,8 +65,15 @@
   }
 
   .user-description {
-    margin-left: 0;
+    margin: 0 0 32px;
+    flex-direction: column-reverse;
+    
+    &>.user-contacts {
+      margin-left: 0;
+      margin: 32px 0;
+    }
   }
+
 }
 
 @media (max-width: 400px) {
