@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { HomePage } from './pages/HomePage/HomePage'
-import AuthPage from './pages/AuthPage/AuthPage'
-import{ UserPage } from './pages/UserPage/UserPage'
+import { AuthPage } from './pages/AuthPage/AuthPage'
+import { UserPage } from './pages/UserPage/UserPage'
 
 function App() {
 
