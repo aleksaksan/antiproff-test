@@ -1,10 +1,10 @@
 header {
   background-color: #512689;
-  padding: 64px 0;
+  padding: 64px 0 48px;
   text-align: center;
   
   h1 {
-    margin: 0 auto 16px;
+    margin: 0 auto;
     color: white;
     font-size: 64px;
     line-height: 75px;
@@ -12,7 +12,7 @@ header {
   }
   
   h2 {
-    margin: 0 auto;
+    margin: 16px auto;
     max-width: 846px;
     color: #F8F8F8;
     font-size: 20px;
@@ -47,7 +47,6 @@ header {
     h1 {
       font-size: 36px;
       line-height: 42px;
-      margin-bottom: 16px;
     }
 
     h2 {

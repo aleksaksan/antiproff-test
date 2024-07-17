@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { HomePage } from './pages/HomePage/HomePage'
 import AuthPage from './pages/AuthPage/AuthPage'
-import CardPage from './pages/CardPage/CardPage'
+import{ UserPage } from './pages/UserPage/UserPage'
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
     <Routes>
       <Route index element={<HomePage />} />
       <Route path={'auth'} element={<AuthPage />} />
-      <Route path={'card'} element={<CardPage />} />
+      <Route path={'user'} element={<UserPage />} />
       <Route path={'*'} element={<Navigate replace to="/" />} />
     </Routes>
   )
