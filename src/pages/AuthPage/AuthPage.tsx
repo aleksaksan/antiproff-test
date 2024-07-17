@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { SvgEye } from '../../components/Svg/SvgEye';
 import './AuthPage.scss';
+import axios from 'axios';
+import { BASE_API } from '../../consts/constsUrl';
 
 export const AuthPage = () => {
   const [passwordField, setPasswordField] = useState<boolean>(false);
@@ -34,7 +36,7 @@ export const AuthPage = () => {
     }
   }
 
-  const submitHandler = (event: FormEvent<HTMLFormElement>) => {
+  const submitHandler = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
     if (password !== confirmPassword) {
@@ -44,13 +46,31 @@ export const AuthPage = () => {
     }
 
     //отправить запрос на регистрацию
-    // if (!confirmPasswordFieldError && !emailError) {
-
-    // }
+    if (!confirmPasswordFieldError && !emailError && username !== '') {
+      const answer = await axios({
+        method: 'post',
+        url: BASE_API + 'register',
+        data: {
+          email,
+          password,
+        } 
+      });
+      console.log(answer);
+      localStorage.setItem('token', answer.data.token);
+    }
     //отправить запрос на вход
-    // if (!emailError) {
-
-    // }
+    if (!emailError && confirmPassword === '') {
+      const answer = await axios({
+        method: 'post',
+        url: BASE_API + 'login',
+        data: {
+          email,
+          password,
+        } 
+      });
+      console.log(answer);
+      localStorage.setItem('token', answer.data.token);
+    }
   }
 
 
