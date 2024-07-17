@@ -8,6 +8,7 @@ export const AuthPage = () => {
   const [confirmPasswordFieldError, setConfirmPasswordFieldError] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
+  const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
 
@@ -20,9 +21,12 @@ export const AuthPage = () => {
   const changeEmail = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
+  const changeUsername = (event: ChangeEvent<HTMLInputElement>) => {
+    setUsername(event.target.value);
+  };
 
   const ValidateEmail = () => {
-    const isValidEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    const isValidEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if (email.match(isValidEmail)) {
       setEmailError(false);
     } else {
@@ -58,7 +62,7 @@ export const AuthPage = () => {
         </h1>
         <label className="auth-label" htmlFor="name">
           Имя
-          <input type="text" placeholder="Артур" />
+          <input type="text" placeholder="Артур" onChange={changeUsername} value={username} />
         </label>
         <label htmlFor="email" className={emailError ? `error` : ``}>
           Электронная почта
@@ -68,6 +72,7 @@ export const AuthPage = () => {
             onChange={changeEmail}
             onFocus={()=>setEmailError(false)}
             onBlur={ValidateEmail}
+            value={email}
           />
         </label>
         <label className="pos-rel" htmlFor="password">
