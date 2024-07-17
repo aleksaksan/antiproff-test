@@ -6,7 +6,11 @@ const HomePage = () => {
   return (
     <div className='page'>
       <Header>
-        <nav>
+        <nav >
+          <NavButton onClick={()=>{}}>
+            <span>Выход</span>
+            <SvgExit />
+          </NavButton>
           <NavButton onClick={()=>{}}>
             <span>Выход</span>
             <SvgExit />
