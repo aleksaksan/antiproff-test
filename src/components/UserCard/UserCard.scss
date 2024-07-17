@@ -1,0 +1,36 @@
+.user-card {
+  width: 305px;
+  height: 264px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px #33333326;
+  padding: 36px 20px;
+  transition: all 0.2s ease-in;
+  border: 1px solid transparent;
+
+  &:active, &:hover {
+    border: 1px solid black;
+  }
+
+  &>img {
+    display: block;
+    margin: 0 auto;
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+  }
+
+  &>.user-name {
+    margin: 16px auto;
+    text-align: center;
+    font-size: 20px;
+    line-height: 23px;
+    color: #151317;
+  }
+  
+  .like-container {
+    text-align: end;
+    &>svg:hover {
+      fill: rgba(194, 0, 0, 0.432);
+    }
+  }
+}
