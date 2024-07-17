@@ -1,0 +1,40 @@
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #F8F8F8;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #F8F8F8;
+  background: transparent;
+  font-weight: 300;
+  font-family: 'Roboto';
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 6px #F8F8F8;
+  }
+
+  &:active {
+    box-shadow: none;
+    background: #0000001e;
+  }
+
+  &>svg {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn {
+    padding: 0;
+    background: transparent;
+    border: none;
+
+    &>svg {
+      display: block;
+    }
+
+    &>span {
+      display: none;
+    }
+  }
+}
